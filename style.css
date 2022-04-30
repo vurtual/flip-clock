@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --flip-time: 250ms;
+}
+
+body {
+  color: red;
+  background-color: #eee;
+  font-size: 10em;
+}
+
+.flip-card {
+  width: 1.6ch;
+  border-radius: 0.1em;
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 7px #0005;
+  margin-inline: 0.03em;
+}
+
+.divider {
+  opacity: 1;
+  transition: 1s;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+}
+
+.top-card,
+.top-flip,
+.bottom-card,
+.bottom-flip {
+  background-color: #f4f4f4;
+  height: 0.5em;
+  overflow: hidden;
+  display: flex;
+  line-height: 1;
+  padding-inline: 0.25em;
+  align-items: flex-start;
+}
+
+.bottom-card,
+.bottom-flip {
+  background-color: white;
+  align-items: flex-end;
+  border-top: 2px solid #ddd;
+}
+
+.top-card {
+  transform: rotateX(15deg);
+  z-index: 0;
+}
+
+.bottom-card {
+  z-index: 0;
+}
+
+.top-flip {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  animation-name: top-flip;
+  animation-fill-mode: forwards;
+  animation-direction: forwards;
+  animation-duration: var(--flip-time);
+  animation-timing-function: ease-in;
+}
+
+.bottom-flip {
+  position: absolute;
+  transform-origin: top;
+  overflow: hidden;
+  top: 0.5em;
+  border-radius: 0.1em;
+  transform: rotateX(-90deg);
+  animation-name: bottom-flip;
+  animation-duration: var(--flip-time);
+  animation-fill-mode: forwards;
+  animation-direction: forwards;
+  animation-delay: var(--flip-time);
+  animation-timing-function: ease-out;
+}
+
+@keyframes top-flip {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes bottom-flip {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="hours tens flip-card" data-number="0">
+        <div class="top-card">0</div>
+        <div class="bottom-card">0</div>
+      </div>
+      <div class="hours units flip-card" data-number="0">
+        <div class="top-card">0</div>
+        <div class="bottom-card">0</div>
+      </div>
+      <span class="divider">:</span>
+      <div class="minutes tens flip-card" data-number="0">
+        <div class="top-card">0</div>
+        <div class="bottom-card">0</div>
+      </div>
+      <div class="minutes units flip-card" data-number="0">
+        <div class="top-card">0</div>
+        <div class="bottom-card">0</div>
+      </div>
+      <span class="divider">:</span>
+      <div class="seconds tens flip-card" data-number="0">
+        <div class="top-card">0</div>
+        <div class="bottom-card">0</div>
+      </div>
+      <div class="seconds units flip-card" data-number="0">
+        <div class="top-card">0</div>
+        <div class="bottom-card">0</div>
+      </div>
+    </div>
+    <template id="top-flip-template">
+      <div class="top-flip"></div>
+    </template>
+    <template id="bottom-flip-template">
+      <div class="bottom-flip"></div>
+    </template>
+  </body>
+</html>
