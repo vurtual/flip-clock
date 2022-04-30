@@ -60,5 +60,6 @@ const toggleDividers = () => {
 }
 
 const timeInterval = setInterval(updateTime, 1000)
+const dividerInterval = setInterval(toggleDividers, 700)
 
 updateTime()
